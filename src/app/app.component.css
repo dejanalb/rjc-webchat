@@ -1,0 +1,58 @@
+.listuser {
+          border:solid;
+          border-radius: 15px;
+          border-color:red;
+          width:15%;
+          height:65%;
+          position: absolute;
+          right:1%;
+          top:1%;
+          }
+
+.chatbox {
+         background-color : lightslategray;
+         border-radius: 15px;
+         border:solid;
+         border-color:blue;
+         width:70% ;
+         height:65%;
+         position: absolute;
+         left:1%;
+         top:1%;
+         }
+
+.textinput {
+           border:solid;
+           border-radius: 15px;
+           color:black;
+           width:70%;
+           position: absolute;
+           left:1%;
+           height:15%;
+           bottom:1%;
+           }
+
+.button {
+        position: absolute;
+        right:15%;
+        bottom:3%;
+        }
+
+.rowChat {
+         border:solid;
+         color:blue;
+         width:20%;
+         }
+
+/*body { 
+     overflow-y: hidden;
+     }*/  
+
+.div1 {
+      background: url('../images/4k_metal_gray.jpg');
+     /* background: url('file:///C:/Users/userid/desktop/f/pic.jpg') no-repeat center center fixed;*/
+     
+     
+      }
+
+     
