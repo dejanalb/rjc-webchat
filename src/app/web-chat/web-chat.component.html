@@ -1,0 +1,29 @@
+<div class="div1"> 
+ 
+    <div class="listuser">
+      <h3><b>USER LIST</b></h3>  
+      <ol>
+        <li *ngFor ="let User of users">
+       <div>{{User.name}},{{User.statusMessage}}</div>
+        </li>
+      </ol>
+    </div>
+  
+    <div class="chatbox">
+      <h3><b>CHAT BOX</b></h3>  
+          <ul>
+            <li *ngFor="let message of chatMessages">
+              <div class="rowChat">{{message.text}}, {{message.dateTime}}</div>
+            </li>
+          </ul>
+    </div>
+  
+    <div>
+      <input class="textinput" type=text [(ngModel)]="inputmessage">
+    </div>
+  
+    <div >
+      <button class="button" (click)="submit()"> Submit </button>
+    </div>
+
+</div>
