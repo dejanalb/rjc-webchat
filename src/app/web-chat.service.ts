@@ -13,12 +13,6 @@ export class WebChatService {
     getUsers() {
      return this.http.get<User[]>(Url1);
      
-      
-    }
+    } 
   }
-    
-    
-    
- 
   
-
