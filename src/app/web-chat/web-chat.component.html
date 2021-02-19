@@ -1,5 +1,11 @@
 <div class="div1"> 
- 
+    
+  <select class="select_mitt" [ngModel]="" name="user">
+    <option value="null">Seleziona mittente </option>
+    <option value="1">IdMitt = 1</option>
+    <option value="2">IdMitt = 2</option>
+  </select>
+    
     <div class="listuser">
       <h3><b>USER LIST</b></h3>  
       <ol>
@@ -19,7 +25,7 @@
     </div>
   
     <div>
-      <input class="textinput" type=text [(ngModel)]="inputmessage">
+      <input class="textinput" type=text placeholder="Scrivi qui il messaggio che vuoi inviare" [(ngModel)]="inputmessage">
     </div>
   
     <div >

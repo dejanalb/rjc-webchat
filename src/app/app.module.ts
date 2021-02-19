@@ -8,10 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { WebChatComponent } from './web-chat/web-chat.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    WebChatComponent
+    WebChatComponent,
   ],
   imports: [
     HttpClientModule,
