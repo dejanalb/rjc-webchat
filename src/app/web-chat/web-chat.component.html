@@ -3,8 +3,8 @@
     <div class="listuser">
       <h3><b>USER LIST</b></h3>  
       <ol>
-        <li *ngFor ="let User of users">
-       <div>{{User.name}},{{User.statusMessage}}</div>
+        <li *ngFor ="let element of users">
+       <div>{{element.name}},{{element.statusMessage}}</div>
         </li>
       </ol>
     </div>
@@ -12,8 +12,8 @@
     <div class="chatbox">
       <h3><b>CHAT BOX</b></h3>  
           <ul>
-            <li *ngFor="let message of chatMessages">
-              <div class="rowChat">{{message.text}}, {{message.dateTime}}</div>
+            <li *ngFor="let element of chatMessages">
+              <div class="rowChat">{{element.text}}, {{element.dateTime}}</div>
             </li>
           </ul>
     </div>

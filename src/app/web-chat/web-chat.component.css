@@ -8,6 +8,7 @@
     position: absolute;
     right:1%;
     top:1%;
+    overflow:scroll;
     }
 
 .chatbox {
@@ -20,6 +21,7 @@
      position: absolute;
      left:1%;
      top:1%;
+     overflow:scroll;
      }
 
 .textinput{

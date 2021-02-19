@@ -13,31 +13,29 @@ import { WebChatService } from '../web-chat.service';
 })
 export class WebChatComponent implements OnInit {
 
-  public users: User[]; 
-  public chatMessages: Message[] =[];
-  
+  public users: User[];
+  public chatMessages: Message[] = [];
+
   public inputmessage: string;
 
 
   constructor(private service: WebChatService, private router: Router) { }
 
-  public submit() {
+  public submit() { // post per inserimento messaggio su db (insertMessage) e refresh lista messaggi (getMessages)
     let sendtime = new Date();
-    let row: Message = { text: this.inputmessage , dateTime: sendtime };
-    this.chatMessages.push(row);
+    let row: Message = { idMitt: 30, idDest: 31, text: this.inputmessage, dateTime: sendtime };
+    this.service.insertMessage(row).subscribe((data: any) => { this.service.getMessages().subscribe(result => this.chatMessages = result); } );
+
   }
-  public sendToDb() { } //da associare al submit : funzione che permetterà di fare una POST per inserire i messaggi nel DB
 
-  public getMessages() { } //al click su un utente andrò a richiedere tutti i messaggi salvati sul DB 
-  
-  
   ngOnInit(): void {
-  //  this.router.navigate(['login']);
+    //  this.router.navigate(['login']);
 
-  this.service.getUsers().subscribe(result => this.users = result);
-  
+    this.service.getUsers().subscribe(result => this.users = result);
+    this.service.getMessages().subscribe(result => this.chatMessages = result);
 
-   
+
+
   }
 
 }
