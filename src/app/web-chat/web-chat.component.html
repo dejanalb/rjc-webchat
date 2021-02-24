@@ -1,35 +1,54 @@
-<div class="div1"> 
+<div class="div1">
+
+  <div class="row">
     
-  <select class="select_mitt" [ngModel]="" name="user">
-    <option value="null">Seleziona mittente </option>
-    <option value="1">IdMitt = 1</option>
-    <option value="2">IdMitt = 2</option>
-  </select>
-    
-    <div class="listuser">
-      <h3><b>USER LIST</b></h3>  
-      <ol>
-        <li *ngFor ="let element of users">
-       <div>{{element.name}},{{element.statusMessage}}</div>
-        </li>
-      </ol>
-    </div>
-  
     <div class="chatbox">
-      <h3><b>CHAT BOX</b></h3>  
-          <ul>
-            <li *ngFor="let element of chatMessages">
-              <div class="rowChat">{{element.text}}, {{element.dateTime}}</div>
-            </li>
-          </ul>
+      <h3><b>CHAT BOX</b></h3>
+      <ul>
+        <li *ngFor="let element of chatMessages">
+          <div class="rowChat">{{element.text}} --- {{element.dateTime}}</div>
+        </li>
+      </ul>
     </div>
-  
-    <div>
-      <input class="textinput" type=text placeholder="Scrivi qui il messaggio che vuoi inviare" [(ngModel)]="inputmessage">
-    </div>
-  
+<div>
+ <mat-form-field appearance="fill" class="select_mitt">
+    <mat-label>Seleziona il mittente</mat-label>
+    <mat-select (selectionChange)="onChange($event)">
+      <mat-option *ngFor="let element of users" [value]="element.idUser">{{element.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <section>
     <div >
-      <button class="button" (click)="submit()"> Submit </button>
+     <button mat-raised-button color="primary" (click)="newUser()">NUOVO UTENTE</button>
     </div>
+  </section>
+</div>
+   <!-- <div class="listuser">
+    <mat-form-field appearance="fill">
+        <mat-label>Scegli con chi parlare</mat-label>
+        <mat-select (selectionChange)="onChange2($event)">
+          <mat-option *ngFor="let element of users" [value]="element.idUser">{{element.name}}</mat-option>
+        </mat-select>
+    </mat-form-field> 
+   </div>  -->
+ 
+ <mat-action-list class="listuser" >
+  <button mat-list-item *ngFor="let element of users" [value]="element.idUser" (click)="onChange2(element.idUser)"> {{element.name}} </button>
+ </mat-action-list>
+
+
+  </div>
+
+  <div class="row">
+    <div>
+      <input class="textinput" type=text placeholder="Inizia a scrivere un messaggio" (keyup.enter)="submit()"
+        [(ngModel)]="inputmessage">
+    </div>
+
+    <div class="button">
+      <button mat-raised-button color="primary" (click)="submit()"> Submit </button>
+    </div>
+  </div>
 
 </div>

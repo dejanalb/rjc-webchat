@@ -1,1 +1,41 @@
-<p>register works!</p>
+<h2>Register</h2>
+
+<!--con [formgroup]="nomeproperties" faccio il bind tra i campi del form e l'oggetto nel ts-->
+<!--Esempio il campo del formControlName="nome" lo posso recuperare con -->
+<!-- miooggetto.nome=nomeproperties.get('nome').value -->
+
+<form [formGroup]="reactiveFormRegister" (ngSubmit)="submitNewUser()" > 
+  <div>
+    <label for="nation">NAME</label>
+    <input type="text" formControlName="name" placeholder="Enter your name">
+  </div>
+
+  <div>
+    <label for="email">E-MAIL</label>
+    <input type="text" formControlName="email" class="form-control" id="email" name="email"
+      placeholder="Enter your e-mail">
+  </div>
+
+  <div>
+    <label for="birthday">BIRTHDAY</label>
+    <input type="date" formControlName="birthday" class="form-control" id="birthday" name="birthday"
+      placeholder="Chose a date">
+  </div>
+
+  <div>
+    <label for="nation">NATION</label>
+    <input type="text" formControlName="nation" class="form-control" id="nation" name="nation" required
+      placeholder="Where ara you from?">
+  </div>
+
+  <div>
+    <label for="statusMessage">STATUSMESSAGE</label>
+    <input type="text" formControlName="statusMessage" class="form-control" id="statusMessage" name="statusMessage"
+      placeholder="statusMessage">
+  </div>
+
+  <div>
+    <button type="submit" >REGISTRATI</button>
+  </div>
+ 
+</form>
